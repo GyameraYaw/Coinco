@@ -1,15 +1,12 @@
-// auth.js - Authentication functionality
-
-// Check if user is already logged in
 document.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
     
-    // If user is logged in and on auth pages, redirect to homepage
+    
     if (currentUser && (window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html'))) {
         window.location.href = 'index.html';
     }
     
-    // Initialize auth forms
+    
     initializeAuthForms();
 });
 
@@ -35,18 +32,18 @@ function handleLogin() {
     const password = document.querySelector('input[placeholder="Password"]').value;
     const rememberMe = document.querySelector('#remember').checked;
     
-    // Basic validation
+    
     if (!username || !password) {
         showMessage('Please fill in all fields', 'error');
         return;
     }
     
-    // Check if user exists in localStorage
+    
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const user = users.find(u => u.username === username && u.password === password);
     
     if (user) {
-        // Login successful
+        
         const loginData = {
             username: user.username,
             email: user.email,
@@ -73,7 +70,7 @@ function handleSignup() {
     const confirmPassword = document.querySelector('input[placeholder="Confirm Password"]').value;
     const termsAccepted = document.querySelector('#terms').checked;
     
-    // Validation
+    
     if (!email || !username || !password || !confirmPassword) {
         showMessage('Please fill in all fields', 'error');
         return;
@@ -94,7 +91,7 @@ function handleSignup() {
         return;
     }
     
-    // Check if user already exists
+    
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     
     if (users.find(u => u.username === username)) {
@@ -107,7 +104,7 @@ function handleSignup() {
         return;
     }
     
-    // Create new user
+    
     const newUser = {
         id: Date.now().toString(),
         username,
@@ -119,7 +116,7 @@ function handleSignup() {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     
-    // Auto-login after signup
+    
     const loginData = {
         username: newUser.username,
         email: newUser.email,
@@ -137,22 +134,22 @@ function handleSignup() {
 }
 
 function showMessage(message, type) {
-    // Remove existing messages
+   
     const existingMessage = document.querySelector('.auth-message');
     if (existingMessage) {
         existingMessage.remove();
     }
     
-    // Create message element
+    
     const messageDiv = document.createElement('div');
     messageDiv.className = `auth-message ${type}`;
     messageDiv.textContent = message;
     
-    // Insert message after the form
+    
     const authForm = document.querySelector('.auth-form');
     authForm.parentNode.insertBefore(messageDiv, authForm.nextSibling);
     
-    // Remove message after 5 seconds
+   
     setTimeout(() => {
         if (messageDiv.parentNode) {
             messageDiv.remove();
@@ -160,19 +157,19 @@ function showMessage(message, type) {
     }, 5000);
 }
 
-// Logout function for homepage
+
 function logout() {
     localStorage.removeItem('currentUser');
     window.location.href = 'login.html';
 }
 
-// Get current user data
+
 function getCurrentUser() {
     const userData = localStorage.getItem('currentUser');
     return userData ? JSON.parse(userData) : null;
 }
 
-// Check if user is authenticated
+
 function isAuthenticated() {
     return getCurrentUser() !== null;
 }
