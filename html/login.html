@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Glassmorphism</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+
+
+    <div class="container">
+        <div class="auth-card">
+            <div class="tab-container">
+                <button class="tab-btn active">👤 Sign In</button>
+                <a href="signup.html" class="tab-btn-link">
+                    <button class="tab-btn">👥 Sign Up</button>
+                </a>
+            </div>
+
+            <form class="auth-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-icon">👤</span>
+                        <input type="text" class="input-field" placeholder="Username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" class="input-field" placeholder="Password" required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <div class="remember-me">
+                    <input type="checkbox" class="checkbox" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    🔐 Sign In
+                </button>
+
+                <div class="auth-footer">
+                    Don't have an account? <a href="signup.html" class="auth-link">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Masuk Mia</a>
+        <a href="#" class="nav-link">Portfolio</a>
+    </nav>
+
+        <script src="/js/auth.js"></script>
+</body>
+</html>
