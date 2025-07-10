@@ -173,3 +173,11 @@ function getCurrentUser() {
 function isAuthenticated() {
     return getCurrentUser() !== null;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = localStorage.getItem('currentUser');
+
+    if (!currentUser && window.location.pathname !== '/signup.html') {
+        window.location.href = 'signup.html';
+    }
+});
