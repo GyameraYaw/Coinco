@@ -174,10 +174,14 @@ function isAuthenticated() {
     return getCurrentUser() !== null;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+ddocument.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
 
-    if (!currentUser && window.location.pathname !== '/index.html') {
-        window.location.href = 'index.html';
+    const isAllowedPage = window.location.pathname.endsWith('index.html') || 
+                          window.location.pathname.endsWith('login.html');
+
+    if (!currentUser && !isAllowedPage) {
+        window.location.href = 'index.html'; 
     }
 });
+
