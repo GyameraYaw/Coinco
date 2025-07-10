@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coinco - Crypto Progress</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <div class="coin-icon"></div>
+                </div>
+                <span class="brand-text">Coinco</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#speakers" class="nav-link">Speakers</a>
+                <a href="#partners" class="nav-link">Partners</a>
+                <a href="#about" class="nav-link">About Us</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="help-dropdown">
+                    <button class="help-btn">Help ⌄</button>
+                    <div class="help-menu">
+                        <a href="#faq">FAQ</a>
+                        <a href="#support">Support</a>
+                        <a href="#guides">Guides</a>
+                    </div>
+                </div>
+                <button class="contact-btn">Contact Us</button>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    We make <br>
+                    <span class="highlight">progress</span> on <br>
+                    <span class="crypto-text">crypto way</span>
+                </h1>
+                
+                <div class="hero-actions">
+                    <button class="get-access-btn">Get Access</button>
+                    <div class="pricing-info">
+                        <span class="price">$16.80</span>
+                        <div class="price-label">
+                            <span>Monthly</span>
+                            <span>Price</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="user-profile">
+                    <div class="profile-image">
+                        <img src="../images/hakim-medium.jpg" alt="User Profile" id="userAvatar">
+                    </div>
+                    <div class="crypto-stats">
+                        <div class="stat-bubble time-bubble">
+                            <span class="time-text">IT'S<br>PERFECT<br>TIME</span>
+                        </div>
+                        <div class="stat-bubble chart-bubble">
+                            <div class="mini-chart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 20%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                </div>
+                                <span class="rating">⭐ 5+</span>
+                            </div>
+                        </div>
+                        <div class="notification-bubble">
+                            <span class="notification-text">DID YOU CATCH THAT?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="features-section">
+            <div class="feature-left">
+                <div class="nft-badge">
+                    <span class="nft-text">NFT</span>
+                    <div class="nft-indicator"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="play-button">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>See how it works</h3>
+                        <p>Art is everywhere.<br>The overview.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-right">
+                <div class="team-section">
+                    <div class="team-badge">TEAM</div>
+                    <div class="team-avatars">
+                        <div class="avatar">
+                            <img src="../images/albert.jpg" alt="Team Member 1">
+                        </div>
+                        <div class="avatar">
+                            <img src="../images/ajony.jpg" alt="Team Member 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="team-description">
+                    <p>Our team is passionate about sharing their knowledge and experience with others. We are always available to offers.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="modal-content">
+            <h2>Welcome back, <span id="welcomeUsername"></span>!</h2>
+            <p>Ready to make progress on the crypto way?</p>
+            <button class="modal-close" onclick="closeWelcomeModal()">Get Started</button>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/homepage.js"></script>
+</body>
+</html>

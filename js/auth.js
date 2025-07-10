@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
     
     
-    if (currentUser && (window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html'))) {
-        window.location.href = 'index.html';
+    if (currentUser && (window.location.pathname.includes('login.html') || window.location.pathname.includes('index.html'))) {
+        window.location.href = 'home.html';
     }
     
     
@@ -56,7 +56,7 @@ function handleLogin() {
         showMessage('Login successful! Redirecting...', 'success');
         
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'home.html';
         }, 1500);
     } else {
         showMessage('Invalid username or password', 'error');
@@ -129,7 +129,7 @@ function handleSignup() {
     showMessage('Account created successfully! Redirecting...', 'success');
     
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     }, 1500);
 }
 
@@ -177,7 +177,7 @@ function isAuthenticated() {
 document.addEventListener('DOMContentLoaded', function() {
     const currentUser = localStorage.getItem('currentUser');
 
-    if (!currentUser && window.location.pathname !== '/signup.html') {
-        window.location.href = 'signup.html';
+    if (!currentUser && window.location.pathname !== '/index.html') {
+        window.location.href = 'index.html';
     }
 });
